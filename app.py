@@ -1,11 +1,17 @@
 #app.py
 #Testing Flask Application
 
-from flask import Flask
+from flask import Flask, render_template, url_for, request, redirect, session, Response, jsonify
 app = Flask(__name__)
-@app.route('/jwacademicsweb')
-def hello_world():
-	return 'Hello from Flask!'
+
+@app.route('/home')
+def home():
+	return render_template('home.html')
+
+
+@app.route('/about')
+def about():
+	return render_template('about.html')
 
 if __name__ == '__main__':
 	app.run()
