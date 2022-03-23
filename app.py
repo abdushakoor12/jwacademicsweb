@@ -1,9 +1,9 @@
 from flask import Flask, render_template, url_for, request, redirect, session, Response, jsonify
 app = Flask(__name__)
 
-@app.route('/home')
+@app.route('/')
 def home():
-	return render_template('home.html')
+	return render_template('index.html')
 
 
 @app.route('/about')
