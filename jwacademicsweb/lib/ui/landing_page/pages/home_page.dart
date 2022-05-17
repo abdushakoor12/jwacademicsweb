@@ -1,3 +1,4 @@
+import 'package:easy_nav/easy_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:jwacademicsweb/core/app_colors.dart';
 import 'package:jwacademicsweb/ui/widgets/responsive_layout.dart';
@@ -50,7 +51,9 @@ class _Intro extends StatelessWidget {
             style: TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.w300, height: 1.5)),
         SizedBox(height: 20),
         InkWell(
-          onTap: (){},
+          onTap: (){
+            NavManager().goToNamed("/register");
+          },
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             decoration: BoxDecoration(
