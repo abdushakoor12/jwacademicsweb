@@ -1,3 +1,4 @@
+import 'package:easy_nav/easy_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:jwacademicsweb/core/app_colors.dart';
 import 'package:jwacademicsweb/ui/widgets/responsive_layout.dart';
@@ -14,12 +15,20 @@ class HomePage extends StatelessWidget {
       child: Column(
         children: [
           if(ResponsiveLayout.isLargeScreen(context))
-            Row(
-              children: [
-                Expanded(child: _Intro()),
-                Expanded(child: _Logo()),
-              ],
-            )
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40.0),
+              child: Row(
+                children: [
+                  Expanded(child: _Intro()),
+                  SizedBox(width: 200,),
+                  Expanded(child: _Logo()),
+                ],
+              ),
+            ),
+          if(!ResponsiveLayout.isLargeScreen(context))
+            _Logo(),
+          if(!ResponsiveLayout.isLargeScreen(context))
+            _Intro(),
         ],
       ),
     );
@@ -37,12 +46,14 @@ class _Intro extends StatelessWidget {
       children: [
         Text("Welcome to JW Academics", style: TextStyle(fontSize: 24, color: Colors.white, fontWeight: FontWeight.bold)),
         SizedBox(height: 20),
-        Text("We provide Academic Assignment Help to Diploma, Degree,\nMaster and PHD full-time/part-time College/ University students.",
+        Text("We provide Academic Assignment Help to Diploma, Degree, Master and PHD full-time/part-time College/ University students.",
 
             style: TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.w300, height: 1.5)),
         SizedBox(height: 20),
         InkWell(
-          onTap: (){},
+          onTap: (){
+            NavManager().goToNamed("/register");
+          },
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             decoration: BoxDecoration(
@@ -66,7 +77,7 @@ class _Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset("assets/img.png", width: 300, height: 300);
+    return Image.asset("assets/img.png", scale: 0.5, width: 400, fit: BoxFit.cover,);
   }
 }
 

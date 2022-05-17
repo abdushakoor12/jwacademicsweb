@@ -19,6 +19,8 @@ class LandingPageController extends ChangeNotifier{
       if(scaffoldKey.currentState?.isEndDrawerOpen == true){
         NavManager().goBack();
       }
+    } else {
+      NavManager().goToNamed('/login');
     }
   }
 
@@ -29,6 +31,6 @@ class LandingPageController extends ChangeNotifier{
   }
 
   void register() {
-
+    NavManager().goToNamed('/register');
   }
 }

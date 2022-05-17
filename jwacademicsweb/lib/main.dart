@@ -18,7 +18,8 @@ Future<void> main() async {
     appId: dotenv.env["appId"] ?? "",
     messagingSenderId: dotenv.env["messagingSenderId"] ?? "",
     projectId: dotenv.env["projectId"] ?? "",
-    databaseURL: dotenv.env["databaseURL"] ?? "",
+    // databaseURL: dotenv.env["databaseURL"] ?? "",
+    databaseURL: "https://jw-academics-default-rtdb.firebaseio.com",
     authDomain: dotenv.env["authDomain"] ?? "",
     storageBucket: dotenv.env["storageBucket"] ?? "",
   ));
